@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Sunscreen - Premium Protection for All Skin Types</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & ROOT VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --bg-color: #FAF6F0; /* Cream lembut sesuai background botol & box */
+            --primary-color: #E28739; /* Warna orange-gold khas dari logo */
+            --text-dark: #3A322D; /* Cokelat gelap hangat untuk teks, bukan hitam kaku */
+            --text-light: #70635A;
+            --white: #FFFFFF;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(250, 246, 240, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(226, 135, 57, 0.1);
+        }
+        .logo-text {
+            font-family: var(--font-title);
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 150px 8% 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            gap: 50px;
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        .hero-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 35px;
+        }
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(226, 135, 57, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #c97129;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(226, 135, 57, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+        }
+        .btn-secondary:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        /* Menggunakan lingkaran estetik di belakang produk */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(226, 135, 57, 0.06);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        /* Ganti 'produk.png' dengan path gambar Anda */
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.08));
+        }
+
+        /* --- FEATURES / ADVANTAGES --- */
+        .features {
+            padding: 80px 8%;
+            background-color: var(--white);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .feature-card {
+            padding: 20px;
+        }
+        .feature-card h3 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* --- PRODUCT SHOWCASE --- */
+        .product-section {
+            padding: 100px 8%;
+            text-align: center;
+        }
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .product-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(226, 135, 57, 0.05);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+        .product-card img {
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 25px;
+        }
+        .product-card h4 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .product-card .price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- CTA BANNER --- */
+        .cta-banner {
+            background-color: #F3ECE3;
+            margin: 50px 8%;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid rgba(226, 135, 57, 0.1);
+        }
+        .cta-banner h2 {
+            font-family: var(--font-title);
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+        .cta-banner p {
+            color: var(--text-light);
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .wa-channels {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(226, 135, 57, 0.1);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background-color: var(--white);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 968px) {
+            header { padding: 20px 5%; }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+                gap: 30px;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .cta-group { justify-content: center; }
+            .hero-image::before { width: 300px; height: 300px; }
+            .cta-banner { padding: 40px 20px; margin: 30px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">Nexora</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Koleksi</a></li>
+            <li><a href="#order">Hubungi Kami</a></li>
+        </ul>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tag">Nexora Sunscreen</span>
+            <h1>Perlindungan Sempurna, Sentuhan Ringan Sepanjang Hari</h1>
+            <p>Diformulasikan secara minimalis untuk melindungi kulit Anda dari UVA/UVB tanpa rasa lengket. Cocok untuk semua jenis kulit demi pancaran alami yang sehat.</p>
+            <div class="cta-group">
+                <a href="https://wa.me/6285714197245?text=Halo%20Nexora,%20saya%20tertarik%20dengan%20produk%20sunscreen%20terbaru" target="_blank" class="btn btn-primary">Pesan Sekarang</a>
+                <a href="#products" class="btn btn-secondary">Lihat Produk</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/logo.png" alt="logo">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>SPF 50+ PA++++</h3>
+            <p>Perlindungan maksimal dan optimal dari bahaya radiasi sinar UV matahari.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Lightweight Formula</h3>
+            <p>Tekstur seringan air, cepat meresap, dan tidak meninggalkan rasa lengket.</p>
+        </div>
+        <div class="feature-card">
+            <h3>For All Skin Type</h3>
+            <p>Dirancang khusus dengan bahan aman dan lembut untuk semua jenis kulit.</p>
+        </div>
+    </section>
+
+    <section class="product-section" id="products">
+        <h2 class="section-title">The Daily Essential</h2>
+        <p class="section-subtitle">Rangkaian perawatan proteksi kulit dari Nexora yang siap menemani aktivitas harian Anda di bawah terik matahari.</p>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="img/sunscreen.jpg" alt="Nexora Sunscreen 50ml">
+                <h4>Nexora Sunscreen SPF 50+</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 10px;">Isi: 50 ml</p>
+                <div class="price">Premium Protection</div>
+                <a href="https://wa.me/6285714197245?text=Halo%20Nexora,%20saya%20ingin%20order%20Sunscreen%20SPF%2050+" target="_blank" class="btn btn-secondary" style="padding: 10px 25px; font-size: 0.85rem;">Beli via Admin 1</a>
+            </div>
+
+            <div class="product-card">
+                <img src="img/serum.jpg" alt="Nexora Serum">
+                <h4>Nexora Skin Serum</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 10px;">Isi: 30 ml</p>
+                <div class="price">Intensive Hydration</div>
+                <a href="https://wa.me/6285148175610?text=Halo%20Nexora,%20saya%20ingin%20order%20Skin%20Serum" target="_blank" class="btn btn-secondary" style="padding: 10px 25px; font-size: 0.85rem;">Beli via Admin 2</a>
+            </div>
+
+            <div class="product-card">
+                <img src="img/mosturaizer.jpg" alt="Nexora Cream">
+                <h4>Nexora Moisture Cream</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 10px;">Isi: 30 gr</p>
+                <div class="price">Soothing & Nourishing</div>
+                <a href="https://wa.me/6285714197245?text=Halo%20Nexora,%20saya%20ingin%20order%20Moisture%20Cream" target="_blank" class="btn btn-secondary" style="padding: 10px 25px; font-size: 0.85rem;">Beli via Admin 1</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner" id="order">
+        <h2>Konsultasi & Pemesanan</h2>
+        <p>Tim kami siap melayani pesanan dan menjawab pertanyaan Anda seputar kesehatan kulit Anda melalui WhatsApp.</p>
+        
+        <div class="wa-channels">
+            <a href="https://wa.me/6285714197245?text=Halo%20Admin%20Nexora%201,%20saya%20mau%20tanya%20mengenai%20produk" target="_blank" class="btn btn-primary" style="background-color: #25D366; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);">
+                Chat Admin 1 (0857-1419-7245)
+            </a>
+            <a href="https://wa.me/6285148175610?text=Halo%20Admin%20Nexora%202,%20saya%20mau%20tanya%20mengenai%20produk" target="_blank" class="btn btn-primary" style="background-color: #25D366; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);">
+                Chat Admin 2 (0851-4817-5610)
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nexora Sunscreen. All Rights Reserved. Minimalist Beauty & Protection.</p>
+    </footer>
+
+</body>
+</html>
